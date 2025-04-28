@@ -47,6 +47,18 @@ const Login = (() => {
                             borderRadius: '5px'
                         }}
                      />
+                     <TextField
+                        label="Pass(確認)"
+                        variant='filled'
+                        margin='normal'
+                        sx={{
+                            width: '245px',
+                            height: '53px',
+                            background: '#ffffff',
+                            boxShadow: '2px 5px 5px gray',
+                            borderRadius: '5px'
+                        }}
+                     />
                 </div>
                 {/* ボタンエリア */}
                 <div className='pt-10 flex flex-col'>
@@ -60,9 +72,9 @@ const Login = (() => {
                             borderRadius: '5px',
                             fontSize: '20px'
                         }}
-                    >ログイン</Button>
+                    >新規登録</Button>
                     <div className='text-center pt-6'>
-                        <a href='/auth/signon' className='text-black underline'>新規登録</a>
+                        <a href='/auth/signin' className='text-black underline'>ログイン画面へ</a>
                     </div>
                 </div>
             </div>
