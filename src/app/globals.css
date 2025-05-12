@@ -26,6 +26,7 @@ body {
 }
 
 .bb-content {
+  position: relative;
   max-width: 393px;
   height: 852px;
   background-color: #FFE4B5;
