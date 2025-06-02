@@ -12,7 +12,7 @@ const Login = (() => {
     return (
         <>
             {/*タイトル*/}
-            <div className="bb-content title-content pt-36">
+            <div className="bb-box title-content pt-36">
                 {/* タイトル名と画像 */}
                 <div className=''>
                     <p>
