@@ -3,16 +3,18 @@
 // ログインページ
 import { useState } from 'react';
 import { Button, TextField } from '@mui/material';
+import { useRouter } from 'next/navigation';
 const Login = (() => {
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
+    const router = useRouter();
 
     // Todo: ログイン処理を実装する
 
     return (
         <>
             {/*タイトル*/}
-            <div className="bb-content title-content pt-36">
+            <div className="bb-box title-content pt-36">
                 {/* タイトル名と画像 */}
                 <div className=''>
                     <p>

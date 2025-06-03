@@ -10,7 +10,7 @@ const Header = (() => {
         {/* ハンバーガーメニュー */}
         <button 
           type="button"
-          className="z-10 space-y-2"
+          className="z-20 space-y-2"
           onClick = {() => setOpenMenu(!openMenu)}
         >
           <div className={
@@ -32,7 +32,7 @@ const Header = (() => {
       </div>
       <nav className={`
         absolute top-12 w-2/5 h-[804px] ease-linear duration-300 text-right pt-20 pr-4
-        ${openMenu ? "right-0 bg-[#FFA500]" : "right-[-10%]"}
+        ${openMenu ? "right-0 bg-[#FFA500] z-10" : "right-[-10%]"}
       `}>
         <ul className={`
 

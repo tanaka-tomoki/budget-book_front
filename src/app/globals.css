@@ -25,9 +25,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.bb-content {
+.bb-box {
   position: relative;
-  max-width: 393px;
+  width: 393px;
   height: 852px;
   background-color: #FFE4B5;
   display: block;
@@ -40,4 +40,25 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+}
+
+.content-area {
+  position: relative;
+  top: 100;
+  color: black;
+}
+
+[class$="-card"] {
+  font-size: 12px;
+  margin-right: 2px;
+  margin-left: 2px;
+  margin-bottom: 3px;
+}
+
+.income-card {
+  background: #FFBEB7;
+}
+
+.expand-card {
+  background: #ADD8E6;
 }
