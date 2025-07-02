@@ -28,7 +28,7 @@ body {
 .bb-box {
   position: relative;
   width: 393px;
-  height: 852px;
+  height: 100vh;
   background-color: #FFE4B5;
   display: block;
   margin-left: auto;
@@ -48,17 +48,42 @@ body {
   color: black;
 }
 
-[class$="-card"] {
+[class$="-label"] {
   font-size: 12px;
   margin-right: 2px;
   margin-left: 2px;
   margin-bottom: 3px;
 }
 
-.income-card {
+.income-label {
   background: #FFBEB7;
 }
 
-.expand-card {
+.expand-label {
   background: #ADD8E6;
+}
+
+.balance-card {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px 0px 10px;
+  justify-content: space-between;
+  width: 353px;
+  height: 76px;
+  border: solid 1px #A9A9A9;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera - !importantを追加 */
+  width: 0 !important;
+  background: transparent !important;
 }
