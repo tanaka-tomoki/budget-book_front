@@ -11,8 +11,8 @@ const Login = () => {
   const router = useRouter();
 
   // Todo: ログイン処理を実装する
-  const rogin = () => {
-    router.push("/features/calender");
+  const signin = () => {
+    router.push("/auth/signin");
   };
 
   return (
@@ -66,12 +66,12 @@ const Login = () => {
               borderRadius: "5px",
               fontSize: "20px",
             }}
-            onClick={rogin}
+            onClick={signin}
           >
             ログイン
           </Button>
           <div className="text-center pt-6">
-            <Link href="/auth/signon" className="text-black underline">
+            <Link href="/features/signup" className="text-black underline">
               新規登録
             </Link>
           </div>

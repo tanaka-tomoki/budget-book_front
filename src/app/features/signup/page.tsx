@@ -2,13 +2,32 @@
 
 // ログインページ
 import { useState } from "react";
-import { Button, TextField } from "@mui/material";
-const Login = () => {
-  const [id, setId] = useState("");
+import { Button, TextField, InputAdornment, IconButton } from "@mui/material";
+import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { API_ENDPOINTS } from '@/utils/constants/APIendpoints';
+import api from '@/utils/client';
+import { AxiosError, AxiosResponse } from 'axios';
+const Signup = () => {
+  const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   // Todo: ログイン処理を実装する
-
+  const signup = async() => {
+    const data = {
+      userName: userName,
+      password: password
+    }
+    await api
+    .post(API_ENDPOINTS.AUTH.SIGNUP, data)
+    .then((response: AxiosResponse) => {
+      const { data, status } = response;
+      console.log('実行結果', data);
+    })
+    .finally(() => {
+      console.log('通信結果');
+    });
+  };
   return (
     <>
       {/*タイトル*/}
@@ -19,7 +38,7 @@ const Login = () => {
             <span className="font-bold text-4xl text-black">Budget</span>
             <span className="font-bold text-4xl text-[#FF8C00]">Book</span>
           </p>
-          <img src={"/logo.png"} />
+          <img src={"/images/logo.png"} />
         </div>
         {/* 入力エリア */}
         <div className="pt-10 flex flex-col">
@@ -27,6 +46,8 @@ const Login = () => {
             label="ID"
             variant="filled"
             margin="normal"
+            value={userName}
+            onChange={e => setUserName(e.target.value)}
             sx={{
               width: "245px",
               height: "53px",
@@ -39,6 +60,7 @@ const Login = () => {
             label="Pass"
             variant="filled"
             margin="normal"
+            type={showPassword ? 'text' : 'password'}
             sx={{
               width: "245px",
               height: "53px",
@@ -46,6 +68,23 @@ const Login = () => {
               boxShadow: "2px 5px 5px gray",
               borderRadius: "5px",
             }}
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                  onMouseDown={() => setShowPassword(true)}
+                  onMouseUp={() => setShowPassword(false)}
+                  onMouseLeave={() => setShowPassword(false)}
+                  onTouchStart={() => setShowPassword(true)}
+                  onTouchEnd={() => setShowPassword(false)}
+                  edge="end"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              ),}}
           />
           <TextField
             label="Pass(確認)"
@@ -72,6 +111,7 @@ const Login = () => {
               borderRadius: "5px",
               fontSize: "20px",
             }}
+            onClick={signup}
           >
             新規登録
           </Button>
@@ -85,4 +125,4 @@ const Login = () => {
     </>
   );
 };
-export default Login;
+export default Signup;
