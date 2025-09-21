@@ -10,12 +10,7 @@ const Header = () => {
   return (
     <>
       <div className="absolute top-12 w-full flex justify-between p-2.5">
-        <Image 
-          src="/images/logo.png"
-          alt="logo"
-          width={44}
-          height={40}
-          />
+        <Image src="/images/logo.png" alt="logo" width={44} height={40} />
         {/* ハンバーガーメニュー */}
         <button
           type="button"

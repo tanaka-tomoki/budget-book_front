@@ -18,5 +18,5 @@ export const emptyBudgetDetailInfo: BudgetDetailInfo = {
   balanceType: "income",
   content: "",
   price: 0,
-  updateAt: (new Date).toISOString().substring(0, 10)
+  updateAt: new Date().toISOString().substring(0, 10),
 };

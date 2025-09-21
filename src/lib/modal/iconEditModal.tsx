@@ -3,7 +3,7 @@ import IconManager from "@/utils/icons";
 import { Button } from "@mui/material";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { BalanceType } from '@/lib/types/balanceType';
+import { BalanceType } from "@/lib/types/balanceType";
 import { IconType } from "../intarFaces/iconType";
 
 // プロップスの設定
@@ -12,7 +12,7 @@ type IconEditModalProps = {
   onClose: () => void;
   onIconSelect: (iconInfo: IconType) => void; // 選択されたアイコンを親に渡すコールバック
   initialSelectedIconId?: IconType; // 初期選択状態
-  initialSelectedCategory: BalanceType
+  initialSelectedCategory: BalanceType;
 };
 
 const IconEditModal: React.FC<IconEditModalProps> = ({
@@ -20,12 +20,16 @@ const IconEditModal: React.FC<IconEditModalProps> = ({
   onClose,
   onIconSelect,
   initialSelectedIconId,
-  initialSelectedCategory
+  initialSelectedCategory,
 }) => {
   // カテゴリで表示するアイコンを分ける。デフォルト：収入
-  const iconByBalance = IconManager.getByType(initialSelectedCategory ? initialSelectedCategory : 'income');
+  const iconByBalance = IconManager.getByType(
+    initialSelectedCategory ? initialSelectedCategory : "income",
+  );
   // モーダル内での選択状態を管理
-  const [selectedIconInfo, setSelectedIconInfo] = useState(initialSelectedIconId);
+  const [selectedIconInfo, setSelectedIconInfo] = useState(
+    initialSelectedIconId,
+  );
 
   // アイコンクリック時の処理
   const handleIconClick = (iconInfo: IconType) => {
