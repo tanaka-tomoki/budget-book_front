@@ -3,30 +3,30 @@
 // ログインページ
 import { useState } from "react";
 import { Button, TextField, InputAdornment, IconButton } from "@mui/material";
-import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { API_ENDPOINTS } from '@/utils/constants/APIendpoints';
-import api from '@/utils/client';
-import { AxiosError, AxiosResponse } from 'axios';
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { API_ENDPOINTS } from "@/utils/constants/APIendpoints";
+import api from "@/utils/client";
+import { AxiosError, AxiosResponse } from "axios";
 const Signup = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   // Todo: ログイン処理を実装する
-  const signup = async() => {
+  const signup = async () => {
     const data = {
       userName: userName,
-      password: password
-    }
+      password: password,
+    };
     await api
-    .post(API_ENDPOINTS.AUTH.SIGNUP, data)
-    .then((response: AxiosResponse) => {
-      const { data, status } = response;
-      console.log('実行結果', data);
-    })
-    .finally(() => {
-      console.log('通信結果');
-    });
+      .post(API_ENDPOINTS.AUTH.SIGNUP, data)
+      .then((response: AxiosResponse) => {
+        const { data, status } = response;
+        console.log("実行結果", data);
+      })
+      .finally(() => {
+        console.log("通信結果");
+      });
   };
   return (
     <>
@@ -47,7 +47,7 @@ const Signup = () => {
             variant="filled"
             margin="normal"
             value={userName}
-            onChange={e => setUserName(e.target.value)}
+            onChange={(e) => setUserName(e.target.value)}
             sx={{
               width: "245px",
               height: "53px",
@@ -60,7 +60,7 @@ const Signup = () => {
             label="Pass"
             variant="filled"
             margin="normal"
-            type={showPassword ? 'text' : 'password'}
+            type={showPassword ? "text" : "password"}
             sx={{
               width: "245px",
               height: "53px",
@@ -69,22 +69,23 @@ const Signup = () => {
               borderRadius: "5px",
             }}
             value={password}
-            onChange={e => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
-                  onMouseDown={() => setShowPassword(true)}
-                  onMouseUp={() => setShowPassword(false)}
-                  onMouseLeave={() => setShowPassword(false)}
-                  onTouchStart={() => setShowPassword(true)}
-                  onTouchEnd={() => setShowPassword(false)}
-                  edge="end"
+                    onMouseDown={() => setShowPassword(true)}
+                    onMouseUp={() => setShowPassword(false)}
+                    onMouseLeave={() => setShowPassword(false)}
+                    onTouchStart={() => setShowPassword(true)}
+                    onTouchEnd={() => setShowPassword(false)}
+                    edge="end"
                   >
                     {showPassword ? <VisibilityOff /> : <Visibility />}
                   </IconButton>
                 </InputAdornment>
-              ),}}
+              ),
+            }}
           />
           <TextField
             label="Pass(確認)"
