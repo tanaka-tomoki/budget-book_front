@@ -117,7 +117,7 @@ const Signup = () => {
             新規登録
           </Button>
           <div className="text-center pt-6">
-            <a href="/auth/signin" className="text-black underline">
+            <a href="/features/signin" className="text-black underline">
               ログイン画面へ
             </a>
           </div>
