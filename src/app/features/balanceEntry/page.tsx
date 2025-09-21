@@ -10,9 +10,9 @@ import {
   emptyBudgetDetailInfo,
 } from "@/lib/intarFaces/budgetDetailInfo";
 import { formatNumber } from "@/utils/format";
-import api from '@/utils/client';
-import { API_ENDPOINTS } from '@/utils/constants/APIendpoints';
-import { AxiosError, AxiosResponse } from 'axios';
+import api from "@/utils/client";
+import { API_ENDPOINTS } from "@/utils/constants/APIendpoints";
+import { AxiosError, AxiosResponse } from "axios";
 
 const BalanceEntry = () => {
   // 今日の日付取得
@@ -59,14 +59,14 @@ const BalanceEntry = () => {
     getBalanceCard();
   }, []);
 
-  const getBalanceCard = async() => {
-     await api
+  const getBalanceCard = async () => {
+    await api
       .get(API_ENDPOINTS.BALAMCECARD.GET)
       .then((response: AxiosResponse) => {
         const { data, status } = response;
       })
       .finally(() => {
-        console.log('通信結果');
+        console.log("通信結果");
       });
   };
 

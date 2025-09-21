@@ -1,9 +1,9 @@
 export const API_ENDPOINTS = {
-  AUTH : {
-    SIGNIN : '/auth/signin',
-    SIGNUP : '/auth/signup'
+  AUTH: {
+    SIGNIN: "/auth/signin",
+    SIGNUP: "/auth/signup",
   },
-  BALAMCECARD : {
-    GET : '/balanceEntry/get'
-  }
+  BALAMCECARD: {
+    GET: "/balanceEntry/get",
+  },
 };
